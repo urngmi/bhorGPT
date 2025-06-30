@@ -1,0 +1,19 @@
+#include <cstdint>
+
+// Context window size - maximum number of tokens the model can process at once
+const uint64_t context = 512;
+
+// Number of transformer layers (blocks) in the model - more depth = more complex representations
+const uint64_t depth = 4;
+
+// Number of attention heads per layer - allows model to focus on different parts of input simultaneously
+const uint64_t heads = 4;
+
+// Embedding dimension - size of vector representation for each token (must be divisible by heads)
+const uint64_t embed = heads * 48;
+
+// Vocabulary size - number of unique tokens the model can understand (256 = byte-level or small charset)
+const uint64_t voca = 256;
+
+// Full batch size for training - total examples processed before updating weights (2^16 = 65,536)
+const uint64_t fullbatch = 1ull << 16;
